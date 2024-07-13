@@ -40,7 +40,7 @@ export const CartPage = () => {
         {
             state.map(item=> {
                 return(
-                    <div key={item.id} className=' bg-lightPink w-[90%] lg:w-[40%] mx-auto p-3 mb-6'>
+                    <Link to={`/details/${item.id}`} key={item.id} className='block bg-lightPink w-[90%] lg:w-[40%] mx-auto p-3 mb-6'>
                         <div className='md:flex items-start mb-4 gap-2'>
                             <div className='flex flex-col items-center justify-between md:w-[40%] md:h-[300px] p-2 border border-brown mb-3 md:mb-0'>
                                 <h1 className='text-center text-[23px] font-[400] text-brown'>{item.name}</h1>
@@ -69,7 +69,7 @@ export const CartPage = () => {
                                 </button>
                             </div>
                         </div>
-                    </div>
+                    </Link>
                 )
             })
         }
