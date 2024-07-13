@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { addToCart, decreaseFromCart, deleteFromCart } from '../Redux/Cart'
+import { addToCart, decreaseFromCart, deleteFromCart, emptyCart } from '../Redux/Cart'
 
 export const CartPage = () => {
     const state = useSelector(state=> state.cart)
@@ -27,6 +27,10 @@ export const CartPage = () => {
     const totalAmount = state.reduce((acc, item) => {
         return (acc += item.totalAmount)
     }, 0);
+
+    const emptyCarts = () => {
+        dispatch(emptyCart())
+    }
 
     useEffect(()=> {
         console.log(state)
@@ -69,6 +73,8 @@ export const CartPage = () => {
                 )
             })
         }
+
+        <div onClick={emptyCarts} className='text-almostWhite bg-brown p-3 rounded-[10px] font-[400] text-[28px] text-center w-[90%] lg:w-[40%] mx-auto'>Clear Cart</div>
 
         <div className='bg-lightPink w-[90%] lg:w-[40%] p-3 mx-auto my-4'>
             <h1 className='text-brown text-center text-[32px] font-[400]'>Cart Summary</h1>
