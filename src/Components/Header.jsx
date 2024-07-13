@@ -31,7 +31,7 @@ export const Header = () => {
                     <img src={support}/>
                     <div className=''>
                         <p className='font-[600]'>Call us 24/7</p>
-                        <p className='text-black font-[600] -mt-1'>+2348167208978</p>
+                        <p className='text-black font-[600] -mt-1'>+2348167208977</p>
                     </div>
                 </div>
                 <div className='flex items-center gap-3 lg:gap-5'>
