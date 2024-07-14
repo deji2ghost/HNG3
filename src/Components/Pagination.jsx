@@ -14,7 +14,7 @@ export const Pagination = ({totalPosts, postsPerPage, setCurrentPage, currentPag
     <div className='flex items-center justify-center gap-3'>
         {
             pages.map((page, index) => {
-                return <button className='bg-brown p-2 text-almostWhite' onClick={() => setCurrentPage(page)} key={index}>{page}</button>
+                return <button className='bg-brown rounded-sm p-2 text-almostWhite' onClick={() => setCurrentPage(page)} key={index}>{page}</button>
             })
         }
     </div>
