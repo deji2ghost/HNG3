@@ -83,4 +83,19 @@ export const CartPage = () => {
                 <h1 className='text-brown text-center text-[32px] font-[400]'>Cart Summary</h1>
                 <div className='flex justify-between items-center text-black bg-almostPink p-3 my-4'>
                     <p className='text-[21px] font-[400]'>Sub Total</p>
-                    <h1 className='text-[28px] font-[400]'>${totalAmount}
+                    <h1 className='text-[28px] font-[400]'>${totalAmount}</h1>
+                </div>
+                
+                <Link to='/checkout'>
+                    <button className='text-almostWhite bg-brown w-full cursor-pointer p-3 rounded-[10px] font-[400] text-[28px] gap-7'>Checkout ${totalAmount}</button>
+                </Link>
+            </div>
+            <Link to='/' className='text-almostWhite bg-[#48190D99] cursor-pointer p-3 w-[35%] lg:w-[10%] mx-auto flex items-center justify-center rounded-[10px] mb-5 font-[400] text-[22px] md:text-[28px]'>
+                Go Back
+            </Link>
+
+        </div> : <h1>Loading...</h1>
+        }
+    </>
+  )
+}
