@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import './Checkout.css'
 import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
@@ -11,6 +11,7 @@ export const CheckOut = () => {
     const state = useSelector(state => state.cart)
     const form = useForm()
     const [confirm, setConfirm] = useState(true)
+    const dispatch = useDispatch()
 
     const onSubmit = (data) => {
         // registerUser(data)
@@ -154,7 +155,7 @@ export const CheckOut = () => {
             <Link to='/cart' className='block w-[30%] text-white p-3 rounded-[12px] bg-[#48190D99] mx-auto text-center'>
                 Back
             </Link>
-            {confirm ? <button type='submit' className='bg-brown w-[60%] text-white p-3 rounded-[12px]'>Confirm Payment</button> : <Link to='/' onClick={() => emptyCart()} type='submit' className='bg-brown w-[60%] text-white p-3 rounded-[12px] text-center'>HomePage</Link>}
+            {confirm ? <button type='submit' className='bg-brown w-[60%] text-white p-3 rounded-[12px]'>Confirm Payment</button> : <Link to='/' onClick={() => dispatch(emptyCart())} type='submit' className='bg-brown w-[60%] text-white p-3 rounded-[12px] text-center'>HomePage</Link>}
         </div>
     </form>
   )
