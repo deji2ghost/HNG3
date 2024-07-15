@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import './Checkout.css'
 import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
+import { emptyCart } from '../Redux/Cart'
 
 export const CheckOut = () => {
     const [one, setOne] = useState(2)
@@ -153,7 +154,7 @@ export const CheckOut = () => {
             <Link to='/cart' className='block w-[30%] text-white p-3 rounded-[12px] bg-[#48190D99] mx-auto text-center'>
                 Back
             </Link>
-            {confirm ? <button type='submit' className='bg-brown w-[60%] text-white p-3 rounded-[12px]'>Confirm Payment</button> : <Link to='/' type='submit' className='bg-brown w-[60%] text-white p-3 rounded-[12px] text-center'>HomePage</Link>}
+            {confirm ? <button type='submit' className='bg-brown w-[60%] text-white p-3 rounded-[12px]'>Confirm Payment</button> : <Link to='/' onClick={() => emptyCart()} type='submit' className='bg-brown w-[60%] text-white p-3 rounded-[12px] text-center'>HomePage</Link>}
         </div>
     </form>
   )

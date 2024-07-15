@@ -1,5 +1,4 @@
-import { faNutritionix, faSearchengin } from '@fortawesome/free-brands-svg-icons'
-import { faHeadset, faHeart, faSearch, faShoppingCart, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faHeart, faSearch, faShoppingCart, faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import hazel from '../images/Hazelnut.png'
 import support from '../images/Support.png'

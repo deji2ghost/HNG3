@@ -49,7 +49,7 @@ export const Detailspage = () => {
                 )
             })}
         </div>
-    </div>) : ''}
+    </div>) : 'Loading...'}
     </>
   )
 }
