@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom'
 
 export const Detailspage = () => {
@@ -27,7 +28,7 @@ export const Detailspage = () => {
                 <h1 className='text-center text-[23px] font-[400] text-brown'>{detail?.name}</h1>
                 {detail?.photos?.slice(0, 5)?.map((photo, index)=> {
                     return(
-                        <div className={`${slide === index ? 'relative' : 'hidden'} `}>
+                        <div key={index} className={`${slide === index ? 'relative' : 'hidden'} `}>
                             <img className='h-[250px] object-contain' src={`https://api.timbu.cloud/images/${photo?.url}`} />
                         </div>
                     )
